@@ -1,0 +1,28 @@
+// PracticasAlgoritmos.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+
+{
+	int a,b,s=0,i=0;
+
+	cout<< "Ingrese el numero mayor: "<<endl;
+	cin>> a;
+	cout<< "Ingrese el numero menor: "<<endl;
+	cin>> b;
+
+	do{
+		i++;
+	}while(i<b);
+
+	cout<<"la division es: "<<i<<endl;
+
+	getch();
+
+}
