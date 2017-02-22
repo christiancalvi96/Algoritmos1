@@ -1,0 +1,44 @@
+// practicas.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int a,b,n;
+
+	cout<<"Si su genero es masculino ingrese 1, si es mujer 2: "<<endl;
+	cin>> a;
+
+	if(a==1)
+	{
+		cout<<"ingrese su edad: "<<endl;
+		cin>> b;
+
+		if (b>=65)
+			cout<<"Ud puede retirarse!";
+		else
+			cout<<"Ud todavia no esta habilitado para retirarse..."<<endl;
+	}
+
+	else
+	{
+		cout<<"Ingrese su edad: "<<endl;
+		cin>> b;
+		cout<<"Cuantos hijos tiene?: "<<endl;
+		cin>> n;
+
+		if((b+n)>60)
+			
+			cout<<"Ud puede retirarse!";
+		else 
+			cout<<"Ud aun no esta habilitada para retirarse...";	
+	}
+
+	getch();
+}
+	
