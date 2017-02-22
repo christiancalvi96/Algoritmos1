@@ -1,0 +1,27 @@
+// practicas.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int edad;
+
+		cout<<"Ingrese el valor de su edad: "<<endl;
+	    cin>> edad;
+
+		if(edad>=18)
+
+			cout<<"Ud esta habilitado para votar!!!";
+
+		getch();
+}
+
+
+
+
+
