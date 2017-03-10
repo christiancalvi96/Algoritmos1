@@ -1,0 +1,124 @@
+// examenpractico.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+float cubo_1 (float a);
+void poten_1();
+void salario( float a);
+int mcd (int a, int b);
+void main()
+{
+	int opcion;
+	float n,result,PI=3.1416,a;
+	do
+	{
+		cout<<"---------- MENU ----------"<<endl;
+		cout<<"1.- Calcular el cubo de un numero real "<<endl;
+		cout<<"2.- Calcular las potencias de PI de 2 a 10 "<<endl;
+		cout<<"3.- Calcular el salario final "<<endl;
+		cout<<"4.- MCD "<<endl;
+		cout<<"0.- Salir..."<<endl;
+		cout<<endl;
+		cout<<"Que opcion desea realizar: "<<endl;
+		cin>> opcion;
+		switch(opcion)
+		{
+		case 1:
+			cout<<"Introducir que numero desea elevar al cubo: "<<endl;
+	        cin>> n;
+	        result=cubo_1(n);
+	        cout<<"El resultado es: "<<result<<endl;
+			cout<<endl;
+			break;
+		case 2:
+			poten_1();
+			cout<<endl;
+			break;
+			
+		case 3:
+			cout<<"Ingrese el monto que gana por mes: "<<endl;
+			cin>> a;
+			salario(a);
+			cout<<endl;
+			break;
+		case 4:
+			cout<<"Ingrese primer y segundo numero: "<<endl;
+			cin>> n;
+			cin>> a;
+			result=mcd(n,a);
+			cout<<"El MCD es: "<<result<<endl;
+			cout<<endl;
+			break;
+		}
+
+	}while(opcion=!0);
+	getch();
+}
+float cubo_1 (float a)
+{
+	float rest;
+	rest=pow(a,3);
+	return(rest);
+}
+void poten_1()
+{
+	float pi=3.1416,x=3.1416,y,i;
+	for(i=2;i<=10;i++)
+	{
+	pi=pi*x;
+	y=sqrt(pi);
+	cout<<"La potencia de PI elevado a "<<i<<" es: "<<pi<<endl;
+	cout<<"La raiz de la potencia es: "<<y<<endl;
+	cout<<endl;
+	}
+}
+void salario( float a)
+{
+	float s,p;
+	
+	if(a<=1000)
+	{
+		s=a*0.10;
+		p=a-s;
+		cout<<"El descuento es: "<<s<<endl;
+		cout<<"Su salario final es: "<<p<<endl;
+		cout<<endl;
+	}
+
+	if(a>1000 && a<=2000)
+	{
+		s=a*0.15;
+		p=a-s;
+		cout<<"El descuento es: "<<s<<endl;
+		cout<<"Su salario final es: "<<p<<endl;
+		cout<<endl;
+	}
+
+	if(a>2000 && a<=3000)
+	{
+		s=a*0.18;
+		p=a-s;
+		cout<<"El descuento es: "<<s<<endl;
+		cout<<"Su salario final es: "<<p<<endl;
+		cout<<endl;
+	}
+}
+int mcd (int a, int b)
+{
+	int r,i,y;
+	if (a>b)
+		r=b;
+	else
+		r=a;
+	for(i=1;i<=r;i++)
+	{
+		if(a%i==0 && b%i==0)
+			y=i;
+	}
+	return(y);
+}
