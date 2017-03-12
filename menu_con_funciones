@@ -11,6 +11,11 @@ float cubo_1 (float a);
 void poten_1();
 void salario( float a);
 int mcd (int a, int b);
+float potencia (float a, float b);
+float fact (float a);
+float serie (float a, float b);
+void fibo (int a);
+
 void main()
 {
 	int opcion;
@@ -22,6 +27,10 @@ void main()
 		cout<<"2.- Calcular las potencias de PI de 2 a 10 "<<endl;
 		cout<<"3.- Calcular el salario final "<<endl;
 		cout<<"4.- MCD "<<endl;
+		cout<<"5.- Potencia dividido factorial impar "<<endl;
+		cout<<"6.- Factorial "<<endl;
+		cout<<"7.- Serie "<<endl;
+		cout<<"8.- Enesimo fibo"<<endl;
 		cout<<"0.- Salir..."<<endl;
 		cout<<endl;
 		cout<<"Que opcion desea realizar: "<<endl;
@@ -54,6 +63,42 @@ void main()
 			cout<<"El MCD es: "<<result<<endl;
 			cout<<endl;
 			break;
+		case 5:
+			cout<<"Ingrese la base y el exponente respectivamente: "<<endl;
+			cin>> n;
+			cin>> a;
+			result=potencia(n,a);
+			cout<<"El resultado es: "<<result<<endl;
+			break;
+		case 6: 
+			cout<<"Ingrese el factorial: "<<endl;
+			cin>> n;
+			result=fact(n);
+			cout<<"El resultado es: "<<result<<endl;
+			cout<<endl;
+			break;
+		case 7:
+			cout<<"Ingrese base: "<<endl;
+			cin>> n;
+			cout<<"Ingrese tope: "<<endl;
+			cin>> a;
+			result= serie(n,a);
+			cout<<"El resultado es: "<<result<<endl;
+			cout<<endl;
+			break;
+		case 8:
+			cout<<"Ingrese que Nsimo fibo desea saber: "<<endl;
+			cin>> n;
+			fibo(n);
+			cout<<endl;
+			break;
+		case 0:
+			cout<<"Saliendo del programa: "<<endl;
+			cout<<endl;
+			break;
+		default:
+			cout<<"Opcion invalida..."<<endl;
+			cout<<endl;
 		}
 
 	}while(opcion=!0);
@@ -121,4 +166,45 @@ int mcd (int a, int b)
 			y=i;
 	}
 	return(y);
+}
+float potencia (float a, float b)
+{
+	float r,i;
+	r=pow(a,b);
+	return(r);
+}
+float fact (float a)
+{
+	float r=1,i;
+	for (i=1;i<=a;i++)
+		r=r*i;
+	return(r);
+}
+float serie (float a, float b)
+{
+	float l=0,i,f,p,sig=1;
+
+	for(i=1;i<=b;i=i+2){
+
+		f=fact(i);
+		p=potencia(a,i);
+		l=l+(p/f)*sig;
+		sig=sig*-1;
+	}
+	return(l);
+}
+void fibo (int a)
+{
+	int i,pen,ult,ter;
+	pen=-1;
+	ult=1;
+	ter=1;
+	
+	for(i=0;i<a;i++)
+	{
+		ter=pen+ult;
+		pen=ult;
+		ult=ter;
+		cout<<"La serie es: "<<"["<<ter<<"]"<<endl;
+	}
 }
