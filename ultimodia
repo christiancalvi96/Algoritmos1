@@ -1,0 +1,123 @@
+// cjhfghfgh.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+void fibo(int a);
+void primo(int a);
+void primos (int a);
+void ec_cuadratica (float a, float b, float c);
+void main()
+{
+	int n,opcion;
+	float a,b,c;
+	do{
+		cout<<"========== MENU ========== "<<endl;
+		cout<<"1.- Nesimo Fibonacci "<<endl;
+		cout<<"2.- Verificar si es Primo "<<endl;
+		cout<<"3.- Verificar si es Primo1 "<<endl;
+		cout<<"4.- Ecuacion Cuadratca "<<endl;
+		cout<<endl;
+		cout<<"Ingrese opcion que desea realizar: "<<endl;
+		cin>> opcion;
+		switch(opcion)
+		{
+		case 1:
+			cout<<"Ingrese el Nesimo Fibonacci que desea saber : "<<endl;
+	        cin>> n;
+			cout<<endl;
+	        fibo(n);
+			break;
+		case 2:
+			cout<<"Ingrese numero: "<<endl;
+			cin>> n;
+			cout<<endl;
+			primo(n);
+			break;
+		case 3:
+			cout<<"Ingrese numero: "<<endl;
+			cin>> n;
+			cout<<endl;
+			primo(n);
+			break;
+		case 4:
+			cout<<"Ejemplo Ax^2+Bx+C=0"<<endl;
+			cout<<"Ingrese el valor de A: "<<endl;
+			cin>> a;
+			cout<<"Ingrese el valor de B: "<<endl;
+			cin>> b;
+			cout<<"Ingrese el valor de C: "<<endl;
+			cin>> c;
+			ec_cuadratica(a,b,c);
+		}
+	}while(opcion=!0);
+	getch();
+}
+void fibo(int a)
+{
+	int i,pen,ult,ter;
+	pen=-1;
+	ult=1;
+	ter=1;
+	for(i=1;i<=a;i++){
+		ter=ult+pen;
+		pen=ult;
+		ult=ter;	
+		cout<<"La serie es: "<<"["<<ter<<"]"<<endl;
+	}
+}
+void primo(int a)
+{
+	int b=0,i,n;
+	for(i=1;i<(a+1);i++)
+	{
+		if(a%i==0){
+			b++;
+		}
+	}
+	if(b!=2){
+	cout<<"No es primo"<<endl;
+	cout<<endl;
+	}
+
+	else{
+	cout<<"Si es primo"<<endl;
+	cout<<endl;
+	}
+}
+void primos (int a)
+{
+	int cont=0,i;
+	for (i=1;i<=a;i++){
+		if(a%i==0)
+			cont=cont+1;
+	}
+	if(cont==2)
+		cout<<"Es primo";
+	else
+		cout<<"No es primo";
+}
+void ec_cuadratica (float a, float b, float c)
+{
+	float x1,x2,d;
+	d=((b*b)-(4*a*c));
+
+	if(d<0)
+		cout<<"Solucion imaginaria"<<endl;
+	if(d==0){
+		x1=(-b/(2*a));
+	cout<<"El resultado es: "<<x1<<endl;
+	}
+	if(d>0){
+
+	x1=((-b+sqrt(pow(b,2)-4*a*c))/2*a);
+	x2=((-b-sqrt(pow(b,2)-4*a*c))/2*a);
+
+	cout<<"Resultado de la primera raiz: "<<x1<<endl;
+	cout<<"Resultado de la segunda raiz: "<<x2<<endl;
+}
+}
