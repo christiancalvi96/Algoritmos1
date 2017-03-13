@@ -11,9 +11,10 @@ void fibo(int a);
 void primo(int a);
 void primos (int a);
 void ec_cuadratica (float a, float b, float c);
+void hora_1 (int a, int b, int c, int d, int e, int f);
 void main()
 {
-	int n,opcion;
+	int n,opcion,d,e,f,g,h,i;
 	float a,b,c;
 	do{
 		cout<<"========== MENU ========== "<<endl;
@@ -21,6 +22,7 @@ void main()
 		cout<<"2.- Verificar si es Primo "<<endl;
 		cout<<"3.- Verificar si es Primo1 "<<endl;
 		cout<<"4.- Ecuacion Cuadratca "<<endl;
+		cout<<"5.- Diferencia de Horario "<<endl;
 		cout<<endl;
 		cout<<"Ingrese opcion que desea realizar: "<<endl;
 		cin>> opcion;
@@ -53,6 +55,22 @@ void main()
 			cout<<"Ingrese el valor de C: "<<endl;
 			cin>> c;
 			ec_cuadratica(a,b,c);
+			break;
+		case 5:
+			cout<<"Ingrese hora 1: "<<endl;
+			cin>> g;
+			cout<<"Ingrese minutos 1: "<<endl;
+			cin>> h;
+			cout<<"Ingrese segundos 1: "<<endl;
+			cin>> i;
+			cout<<"Ingrese hora 2: "<<endl;
+			cin>> d;
+			cout<<"Ingrese minutos 2: "<<endl;
+			cin>> e;
+			cout<<"Ingrese segundos 2: "<<endl;
+			cin>> f;
+			hora_1(g,h,i,d,e,f);
+			break;
 		}
 	}while(opcion=!0);
 	getch();
@@ -112,12 +130,35 @@ void ec_cuadratica (float a, float b, float c)
 		x1=(-b/(2*a));
 	cout<<"El resultado es: "<<x1<<endl;
 	}
-	if(d>0){
+	if(d>0)
+	{
 
 	x1=((-b+sqrt(pow(b,2)-4*a*c))/2*a);
 	x2=((-b-sqrt(pow(b,2)-4*a*c))/2*a);
 
 	cout<<"Resultado de la primera raiz: "<<x1<<endl;
 	cout<<"Resultado de la segunda raiz: "<<x2<<endl;
+	}
 }
+void hora_1 (int g, int h, int i, int d, int e, int f)
+{
+	int x,y,z,v,r,t,o,hora,minutos,segundos;
+
+	x=g*3600;
+	y=h*60;
+	z=x+y+i;
+	v=d*3600;
+	r=e*60;
+	t=v+r+f;
+
+	if (z>t)
+	o=z-t;
+	else
+	o=t-z;
+
+	hora=o/3600;
+	minutos=(o%3600)/60;
+	segundos=(0%3600)%60;
+
+	cout<<"Diferencia de hora es: "<<hora<<":"<<minutos<<":"<<segundos<<endl;
 }
