@@ -1,0 +1,41 @@
+// resolviendoexamen}.h
+
+#include "Stdafx.h"
+#include <iostream>
+#include "math.h"
+#include "conio.h"
+
+using namespace std;
+int nivel_riesgo (int a, int b, int c, int d);
+void main()
+{
+	int sueldo,historial,moroso,hipoteca,result;
+
+	cout<<"Ingrese el sueldo que gana: "<<endl;
+	cin>> sueldo;
+	cout<<"El cliente tiene historial? SI=1, NO=0: "<<endl;
+	cin>> historial;
+	cout<<"El cliente es moroso? SI=1, NO=0: "<<endl;
+	cin>> moroso;
+	cout<<"Cuanto paga al mes de hipoteca? : "<<endl;
+	cin>> hipoteca;
+
+	result= nivel_riesgo(sueldo,historial,moroso,hipoteca);
+	cout<<"El nivel de riesgo es: "<<result<<endl;
+	getch();
+}
+int nivel_riesgo (int a, int b, int c, int d)
+{
+	int riesgo;
+	
+	if ((b==1 && c==1) || (d>a*0.30)){
+		riesgo=1;
+	return(riesgo);
+	if((b==0 && d<a*0.20) || (b==1 && c==0 && d<a*0.30))
+		riesgo=2;
+	return(riesgo);
+	}
+	else 
+		riesgo=3;
+	return(riesgo);
+}
