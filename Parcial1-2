@@ -14,7 +14,7 @@ void main()
 
 	cout<<"Ingrese el valor de x: "<<endl;
 	cin>> x;
-	cout<<"Ingrese el valor de n:_"<<endl;
+	cout<<"Ingrese el valor de n: "<<endl;
 	cin>> n;
 
 	do{
@@ -23,6 +23,7 @@ void main()
 	for(i=1;i<=n;i++)
 		s=s+pow(y,i);
 	}while (n>0 && x>0);
+	cout<<"El resultado es: "<<s<<endl;
 	getch();
 
 }
